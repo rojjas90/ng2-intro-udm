@@ -5,7 +5,15 @@ import { AuthorComponent } from "./author.component";
 @Component({
     selector: "my-app",
     template: `
-    <h1>My First Angular 2 App</h1>
+    <h1>{{title}}</h1>
+    <!-- Property binding -->
+    <h2 [textContent]="title"></h2>
+
+    <!-- ways to rendering content -->
+    <img src="{{imageUrl}}" />
+    <img [src]="imageUrl" />
+    <img bind-src="imageUrl" />
+
     <courses></courses>
     <authors></authors>
     `,
@@ -14,4 +22,7 @@ import { AuthorComponent } from "./author.component";
         AuthorComponent
     ]
 })
-export class AppComponent { }
+export class AppComponent {
+    title = "Angular App";
+    imageUrl = "http://lorempixel.com/400/200";
+}
