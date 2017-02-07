@@ -2,7 +2,8 @@
 /node_modules
 
 
-# ignore node modules folder in stage area
-# *.js.map
-# 
-# /app/*.js
+# ignore all *.js.map files
+*.js.map
+
+# ignore all js file inside app folder
+/app/*.js
