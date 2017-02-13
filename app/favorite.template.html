@@ -1,7 +1,17 @@
+<!-- My solution
  <div>
      <i class="cursor glyphicon"
      [class.glyphicon-heart]="favorite"
      [class.glyphicon-heart-empty]="!favorite"
+     (click)="onClick()"
+     > </i>
+     <span>{{counterLikes}}</span>
+</div> -->
+
+<!-- Mosh solution -->
+<div>
+     <i class="glyphicon glyphicon-heart"
+     [class.highlighted]="favorite"
      (click)="onClick()"
      > </i>
      <span>{{counterLikes}}</span>

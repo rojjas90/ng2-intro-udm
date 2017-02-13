@@ -20,7 +20,7 @@ import {FavoriteComponent} from "./favorite.component";
     <authors></authors>
     <i class="glyphicon glyphicon-star"></i>
     <exercise [favorite]="post.favorite" (change)="onFavoriteChange($event)"></exercise>
-    <favorite [favorite]="post.favorite"></favorite>
+    <favorite [favorite]="likes.favorite" [counterLikes]="likes.totalLike"></favorite>
     `,
     directives: [
         CoursesComponent,
@@ -36,6 +36,12 @@ export class AppComponent {
     post = {
         title: "favorite",
         favorite: true
+    };
+
+    likes = {
+        title: "favorite",
+        favorite: true,
+        totalLike: 10
     };
 
     onFavoriteChange($event) {

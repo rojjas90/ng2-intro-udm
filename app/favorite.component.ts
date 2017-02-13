@@ -1,3 +1,40 @@
+// my solution
+// import {Component, Input, Output} from "angular2/core";
+//
+// @Component({
+//     selector: "favorite",
+//     templateUrl: "app/favorite.template.html",
+//     styles: [`
+//       .glyphicon-heart{
+//         color: deeppink;
+//       }
+//
+//       .glyphicon-heart-empty{
+//         color: #ccc;
+//       }
+//
+//       .cursor{
+//         cursor: pointer;
+//       }
+//       `]
+//
+// })
+// export class FavoriteComponent {
+//     @Input() favorite = false;
+//
+//     counterLikes = 10;
+//
+//     onClick() {
+//         this.favorite = !this.favorite;
+//
+//         if (this.favorite)
+//             this.counterLikes++;
+//         else
+//             this.counterLikes--;
+//     }
+// }
+
+// Mosh solution
 import {Component, Input, Output} from "angular2/core";
 
 @Component({
@@ -5,30 +42,23 @@ import {Component, Input, Output} from "angular2/core";
     templateUrl: "app/favorite.template.html",
     styles: [`
       .glyphicon-heart{
-        color: deeppink;
-      }
-
-      .glyphicon-heart-empty{
         color: #ccc;
+        cursor: pointer;
       }
 
-      .cursor{
-        cursor: pointer;
+      .highlighted{
+        color: deeppink;
       }
       `]
 
 })
 export class FavoriteComponent {
     @Input() favorite = false;
-
-    counterLikes = 10;
+    @Input() counterLikes = 0;
 
     onClick() {
         this.favorite = !this.favorite;
 
-        if (this.favorite)
-            this.counterLikes++;
-        else
-            this.counterLikes--;
+        this.counterLikes += this.favorite ? 1 : -1;
     }
 }
