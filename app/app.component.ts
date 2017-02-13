@@ -17,6 +17,7 @@ import {ExerciseComponent} from "./exercise.component";
 
     <courses></courses>
     <authors></authors>
+    <i class="glyphicon glyphicon-star"></i>
     <exercise [favorite]="post.favorite" (change)="onFavoriteChange($event)"></exercise>
     `,
     directives: [

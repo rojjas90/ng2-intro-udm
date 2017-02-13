@@ -33,6 +33,13 @@ import {Component, Input, Output, EventEmitter} from "angular2/core"; // EventEm
     //   inputs: ["favorite"]  // No. 2: other way to declare INPUT property, but when we do refactoring or change name property, we have to come here and rename the string
     // ,
     // outputs: ["change"] // component metadata; No. 2
+    ,
+    styles: [
+        `
+      .glyphicon-star{
+        color: orange;
+      }
+      `]
 })
 export class ExerciseComponent {
     @Input() favorite = false; // No 1: decorator; the private property becomes to INPUT property, now it's part of public API of our Component,
