@@ -1,6 +1,7 @@
 import { Component } from "angular2/core";
 import { CoursesComponent } from "./courses.component";
 import { AuthorComponent } from "./author.component";
+import {ExerciseComponent} from "./exercise.component";
 
 @Component({
     selector: "my-app",
@@ -16,10 +17,12 @@ import { AuthorComponent } from "./author.component";
 
     <courses></courses>
     <authors></authors>
+    <exercise></exercise>
     `,
     directives: [
         CoursesComponent,
-        AuthorComponent
+        AuthorComponent,
+        ExerciseComponent
     ]
 })
 export class AppComponent {
