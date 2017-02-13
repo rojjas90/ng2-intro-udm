@@ -17,7 +17,7 @@ import {ExerciseComponent} from "./exercise.component";
 
     <courses></courses>
     <authors></authors>
-    <exercise></exercise>
+    <exercise [favorite]="post.favorite"></exercise>
     `,
     directives: [
         CoursesComponent,
@@ -28,4 +28,9 @@ import {ExerciseComponent} from "./exercise.component";
 export class AppComponent {
     title = "Angular App";
     imageUrl = "http://lorempixel.com/400/200";
+
+    post = {
+        title: "favorite",
+        favorite: true
+    };
 }
