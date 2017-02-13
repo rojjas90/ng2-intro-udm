@@ -17,7 +17,7 @@ import {ExerciseComponent} from "./exercise.component";
 
     <courses></courses>
     <authors></authors>
-    <exercise [favorite]="post.favorite"></exercise>
+    <exercise [favorite]="post.favorite" (change)="onFavoriteChange($event)"></exercise>
     `,
     directives: [
         CoursesComponent,
@@ -33,4 +33,9 @@ export class AppComponent {
         title: "favorite",
         favorite: true
     };
+
+    onFavoriteChange($event) {
+        console.log($event);
+    }
+
 }
