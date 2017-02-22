@@ -48,11 +48,11 @@ export class ExerciseComponent {
     // change to: <exercise [namePublicProperty]="post.favorite"></exercise>
     // favorite = false; // No 2:
 
-    @Output() change = new EventEmitter(); //  No 1. decorator Output and import it, similar to Input
+    @Output() changeCustom = new EventEmitter(); //  No 1. decorator Output and import it, similar to Input
 
     onClick() {
         this.favorite = !this.favorite;
 
-        this.change.emit({ newValue: this.favorite });
+        this.changeCustom.emit({ newValue: this.favorite });
     }
 };

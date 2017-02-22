@@ -9,7 +9,7 @@ import {Directive, ElementRef, Renderer} from "angular2/core";
 })
 export class AutoGrowDirective {
 
-    construct(private el: ElementRef, private renderer: Renderer) {
+    constructor(private el: ElementRef, private renderer: Renderer) {
 
     }
 

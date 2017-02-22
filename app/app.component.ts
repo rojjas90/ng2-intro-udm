@@ -1,8 +1,9 @@
 import { Component } from "angular2/core";
 import { CoursesComponent } from "./courses.component";
 import { AuthorComponent } from "./author.component";
-import {ExerciseComponent} from "./exercise.component";
-import {FavoriteComponent} from "./favorite.component";
+import { ExerciseComponent } from "./exercise.component";
+import { FavoriteComponent } from "./favorite.component";
+import { VoteComponent } from "./vote.component";
 
 @Component({
     selector: "my-app",
@@ -19,14 +20,16 @@ import {FavoriteComponent} from "./favorite.component";
     <courses></courses>
     <authors></authors>
     <i class="glyphicon glyphicon-star"></i>
-    <exercise [favorite]="post.favorite" (change)="onFavoriteChange($event)"></exercise>
+    <exercise [favorite]="post.favorite" (changeCustom)="onFavoriteChange($event)"></exercise>
     <favorite [favorite]="likes.favorite" [counterLikes]="likes.totalLike"></favorite>
+    <votes [voteCount]="votes.voteCount" [myVote]="votes.myVote" (vote)="votation($event)"></votes>
     `,
     directives: [
         CoursesComponent,
         AuthorComponent,
         ExerciseComponent,
-        FavoriteComponent
+        FavoriteComponent,
+        VoteComponent
     ]
 })
 export class AppComponent {
@@ -44,7 +47,16 @@ export class AppComponent {
         totalLike: 10
     };
 
+    votes = {
+        voteCount: 10,
+        myVote: 0
+    };
+
     onFavoriteChange($event) {
+        console.log($event);
+    }
+
+    votation($event) {
         console.log($event);
     }
 
