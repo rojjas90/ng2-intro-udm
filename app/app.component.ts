@@ -22,7 +22,15 @@ import { VoteComponent } from "./vote.component";
     <i class="glyphicon glyphicon-star"></i>
     <exercise [favorite]="post.favorite" (changeCustom)="onFavoriteChange($event)"></exercise>
     <favorite [favorite]="likes.favorite" [counterLikes]="likes.totalLike"></favorite>
-    <votes [voteCount]="votes.voteCount" [myVote]="votes.myVote" (vote)="votation($event)"></votes>
+
+    <!-- My solution -->
+    <!-- <votes [voteCount]="votes.voteCount" [myVote]="votes.myVote" (vote)="votation($event)"></votes>-->
+
+    <!-- Mosh solution -->
+    <votes
+    [voteCount]="votes.voteCount"
+    [myVote]="votes.myVote"
+    (vote)="onVote($event)"></votes>
     `,
     directives: [
         CoursesComponent,
@@ -56,7 +64,13 @@ export class AppComponent {
         console.log($event);
     }
 
-    votation($event) {
+    // // My solutions
+    // votation($event) {
+    //     console.log($event);
+    // }
+
+    // Mosh solution
+    onVote($event) {
         console.log($event);
     }
 
