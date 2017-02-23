@@ -55,6 +55,19 @@ import { TwitListComponent } from "./twit-list.component";
       You don't have any courses yet.
     </div>
 
+    <br>
+    <br>
+
+    <!-- review ngSwitch -->
+    <ul class="nav nav-pills">
+         <li [class.active]="viewMode==='map'"><a (click)="viewMode = 'map'">Map view</a></li>
+         <li [class.active]="viewMode==='list'"><a (click)="viewMode = 'list'">List view</a></li>
+    </ul>
+    <div [ngSwitch]="viewMode">
+         <template [ngSwitchWhen]="'map'">Map view content</template>
+         <template [ngSwitchWhen]="'list'">List view content</template>
+         <template ngSwitchDefault>Default view</template>
+    </div>
     `,
     directives: [
         CoursesComponent,
@@ -85,7 +98,11 @@ export class AppComponent {
         myVote: 0
     };
 
+    // *ngIf
     courses = [];
+
+    // [ngSwitch] directive
+    viewMode = "map";
 
     onFavoriteChange($event) {
         console.log($event);
