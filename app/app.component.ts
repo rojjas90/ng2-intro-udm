@@ -5,6 +5,7 @@ import { ExerciseComponent } from "./exercise.component";
 import { FavoriteComponent } from "./favorite.component";
 import { VoteComponent } from "./vote.component";
 import { TwitListComponent } from "./twit-list.component";
+import { SummaryPipe } from "./summary.pipe";
 
 @Component({
     selector: "my-app",
@@ -58,7 +59,7 @@ import { TwitListComponent } from "./twit-list.component";
     <br>
     <br>
 
-    <!-- review ngSwitch -->
+    <!-- ngSwitch review -->
     <ul class="nav nav-pills">
          <li [class.active]="viewMode==='map'"><a (click)="viewMode = 'map'">Map view</a></li>
          <li [class.active]="viewMode==='list'"><a (click)="viewMode = 'list'">List view</a></li>
@@ -71,7 +72,7 @@ import { TwitListComponent } from "./twit-list.component";
 
     <br>
     <br>
-    <!-- review ngFor -->
+    <!-- ngFor review -->
     <ul>
          <li *ngFor="#course of courses1, #i = index">
               {{i + 1}} - {{ course }}
@@ -80,7 +81,7 @@ import { TwitListComponent } from "./twit-list.component";
 
     <br>
     <br>
-    <!-- review Pipes -->
+    <!-- Pipes review -->
     {{data.title | uppercase | lowercase}}
     <br>
     {{data.students | number }}
@@ -93,6 +94,14 @@ import { TwitListComponent } from "./twit-list.component";
     <br>
     {{data | json}}
     <br>
+    <br>
+    <br>
+
+    {{post1.title}}
+    <br>
+    {{post1.body |summary:10 }}
+    <br>
+
     `,
     directives: [
         CoursesComponent,
@@ -101,6 +110,9 @@ import { TwitListComponent } from "./twit-list.component";
         FavoriteComponent,
         VoteComponent,
         TwitListComponent
+    ],
+    pipes: [
+        SummaryPipe
     ]
 })
 export class AppComponent {
@@ -144,6 +156,13 @@ export class AppComponent {
         price: 99.34,
         releaseDate: new Date(2017, 2, 4)
     };
+
+    // Custom pipes
+    post1 = {
+        title: "Angular tutorial",
+        body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    };
+
 
     onFavoriteChange($event) {
         console.log($event);
