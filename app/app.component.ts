@@ -35,8 +35,26 @@ import { TwitListComponent } from "./twit-list.component";
 
     <br>
     <br>
-    <br>
     <twits></twits>
+    <br>
+    <br>
+
+<!-- using *ngIf directive -->
+    <div *ngIf="courses.length > 0">
+      List of courses
+    </div>
+    <div *ngIf="courses.length === 0">
+      You don't have any courses yet.
+    </div>
+    <br>
+    <!-- using hidden property -->
+    <div [hidden]="courses.length === 0">
+      List of courses
+    </div>
+    <div [hidden]="courses.length > 0">
+      You don't have any courses yet.
+    </div>
+
     `,
     directives: [
         CoursesComponent,
@@ -66,6 +84,8 @@ export class AppComponent {
         voteCount: 10,
         myVote: 0
     };
+
+    courses = [];
 
     onFavoriteChange($event) {
         console.log($event);
