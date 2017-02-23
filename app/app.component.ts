@@ -120,6 +120,16 @@ import { SummaryPipe } from "./summary.pipe";
         fontWeight: canSave ? 'bold' : 'normal'
       }"
     >Submit 2</button>
+
+<br>
+<br>
+<br>
+    <!-- Elvis operator review -->
+    <ul>
+         <li>Title: {{task.title}}</li>
+         <!--<li *ngIf="task.assignee !== null">Assigned to: {{task.assignee.name}}</li> -->
+         <li>Assigned to: {{task.assignee?.name}}</li>
+    </ul>
     `,
     directives: [
         CoursesComponent,
@@ -183,6 +193,15 @@ export class AppComponent {
 
     // ngStyle review
     canSave = true;
+
+    // Elvis operator review
+    task = {
+        title: "Review application",
+        assignee: null
+        //  {
+        //     name: "Rojas"
+        // }
+    };
 
     onFavoriteChange($event) {
         console.log($event);
