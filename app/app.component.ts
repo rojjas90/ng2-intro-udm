@@ -71,12 +71,28 @@ import { TwitListComponent } from "./twit-list.component";
 
     <br>
     <br>
-    <!-- review ngSwitch -->
+    <!-- review ngFor -->
     <ul>
          <li *ngFor="#course of courses1, #i = index">
               {{i + 1}} - {{ course }}
          </li>
     </ul>
+
+    <br>
+    <br>
+    <!-- review Pipes -->
+    {{data.title | uppercase | lowercase}}
+    <br>
+    {{data.students | number }}
+    <br>
+    {{data.rating | number: '2.2-2' }}
+    <br>
+    {{data.price | currency:'MXN':true:'2.2-2'}}
+    <br>
+    {{data.releaseDate | date:'dd MM yyyy'}}
+    <br>
+    {{data | json}}
+    <br>
     `,
     directives: [
         CoursesComponent,
@@ -119,6 +135,15 @@ export class AppComponent {
         "courses2",
         "courses3"
     ];
+
+    // Pipes; concept which is used to format data
+    data = {
+        title: "Angular",
+        rating: 3.437654,
+        students: 5434,
+        price: 99.34,
+        releaseDate: new Date(2017, 2, 4)
+    };
 
     onFavoriteChange($event) {
         console.log($event);
