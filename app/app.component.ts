@@ -6,6 +6,7 @@ import { FavoriteComponent } from "./favorite.component";
 import { VoteComponent } from "./vote.component";
 import { TwitListComponent } from "./twit-list.component";
 import { SummaryPipe } from "./summary.pipe";
+import { BootstrapPanelComponent } from "./bootstrap.panel.component";
 
 @Component({
     selector: "my-app",
@@ -121,15 +122,25 @@ import { SummaryPipe } from "./summary.pipe";
       }"
     >Submit 2</button>
 
-<br>
-<br>
-<br>
+    <br>
+    <br>
+    <br>
     <!-- Elvis operator review -->
     <ul>
          <li>Title: {{task.title}}</li>
          <!--<li *ngIf="task.assignee !== null">Assigned to: {{task.assignee.name}}</li> -->
          <li>Assigned to: {{task.assignee?.name}}</li>
     </ul>
+
+    <br>
+    <br>
+    <br>
+
+    <bs-panel>
+      <div class="heading">The heading</div>
+      <div class="body">This is the body!</div>
+      <div class="body">More content</div>
+    </bs-panel>
     `,
     directives: [
         CoursesComponent,
@@ -137,7 +148,8 @@ import { SummaryPipe } from "./summary.pipe";
         ExerciseComponent,
         FavoriteComponent,
         VoteComponent,
-        TwitListComponent
+        TwitListComponent,
+        BootstrapPanelComponent
     ],
     pipes: [
         SummaryPipe
