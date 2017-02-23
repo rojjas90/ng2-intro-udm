@@ -1,7 +1,9 @@
 <!-- <div> -->
      <i class="glyphicon"
-     [class.glyphicon-star]="favorite"
-     [class.glyphicon-star-empty]="!favorite"
+     [ngClass]="{
+       'glyphicon-star': favorite,
+       'glyphicon-star-empty': !favorite
+     }"
      (click)="onClick()">
    </i>
 <!-- </div> -->
