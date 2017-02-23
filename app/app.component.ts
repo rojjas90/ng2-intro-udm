@@ -68,6 +68,15 @@ import { TwitListComponent } from "./twit-list.component";
          <template [ngSwitchWhen]="'list'">List view content</template>
          <template ngSwitchDefault>Default view</template>
     </div>
+
+    <br>
+    <br>
+    <!-- review ngSwitch -->
+    <ul>
+         <li *ngFor="#course of courses1, #i = index">
+              {{i + 1}} - {{ course }}
+         </li>
+    </ul>
     `,
     directives: [
         CoursesComponent,
@@ -103,6 +112,13 @@ export class AppComponent {
 
     // [ngSwitch] directive
     viewMode = "map";
+
+    // *ngFor
+    courses1 = [
+        "courses1",
+        "courses2",
+        "courses3"
+    ];
 
     onFavoriteChange($event) {
         console.log($event);
