@@ -97,11 +97,29 @@ import { SummaryPipe } from "./summary.pipe";
     <br>
     <br>
 
+    <!-- Custom pipe review -->
     {{post1.title}}
     <br>
     {{post1.body |summary:10 }}
     <br>
+    <br>
+    <br>
+    <!-- ngStyle review -->
+    <button
+    [style.backgroundColor]="canSave ? 'blue' : 'gray'"
+    [style.color]="canSave ? 'white' : 'black'"
+    [style.fontWeight]="canSave ? 'bold' : 'normal'"
+    >Submit 1</button>
 
+    <!-- or -->
+
+    <button
+      [ngStyle]  ="{
+        backgroundColor: canSave ? 'blue' : 'gray',
+        color: canSave ? 'white' : 'black',
+        fontWeight: canSave ? 'bold' : 'normal'
+      }"
+    >Submit 2</button>
     `,
     directives: [
         CoursesComponent,
@@ -163,6 +181,8 @@ export class AppComponent {
         body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     };
 
+    // ngStyle review
+    canSave = true;
 
     onFavoriteChange($event) {
         console.log($event);
