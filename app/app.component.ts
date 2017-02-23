@@ -7,6 +7,7 @@ import { VoteComponent } from "./vote.component";
 import { TwitListComponent } from "./twit-list.component";
 import { SummaryPipe } from "./summary.pipe";
 import { BootstrapPanelComponent } from "./bootstrap.panel.component";
+import { ZippyComponent } from "./zippy.component";
 
 @Component({
     selector: "my-app",
@@ -141,6 +142,13 @@ import { BootstrapPanelComponent } from "./bootstrap.panel.component";
       <div class="body">This is the body!</div>
       <div class="body">More content</div>
     </bs-panel>
+
+    <br>
+    <br>
+    <br>
+    <zippy *ngFor="#zippy of zippyData" [title]="zippy.title">
+    {{zippy.content}}
+    </zippy>
     `,
     directives: [
         CoursesComponent,
@@ -149,7 +157,8 @@ import { BootstrapPanelComponent } from "./bootstrap.panel.component";
         FavoriteComponent,
         VoteComponent,
         TwitListComponent,
-        BootstrapPanelComponent
+        BootstrapPanelComponent,
+        ZippyComponent
     ],
     pipes: [
         SummaryPipe
@@ -200,7 +209,7 @@ export class AppComponent {
     // Custom pipes
     post1 = {
         title: "Angular tutorial",
-        body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     };
 
     // ngStyle review
@@ -214,6 +223,18 @@ export class AppComponent {
         //     name: "Rojas"
         // }
     };
+
+    // Exercise
+    zippyData = [
+        {
+            title: "Section one",
+            content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+        },
+        {
+            title: "Section two",
+            content: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        }
+    ];
 
     onFavoriteChange($event) {
         console.log($event);
