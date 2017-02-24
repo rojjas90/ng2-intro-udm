@@ -8,6 +8,7 @@ import { TwitListComponent } from "./twit-list.component";
 import { SummaryPipe } from "./summary.pipe";
 import { BootstrapPanelComponent } from "./bootstrap.panel.component";
 import { ZippyComponent } from "./zippy.component";
+import { ContactFormComponent } from "./contact/contact-form.component";
 
 @Component({
     selector: "my-app",
@@ -149,6 +150,10 @@ import { ZippyComponent } from "./zippy.component";
     <zippy *ngFor="#zippy of zippyData" [title]="zippy.title">
     {{zippy.content}}
     </zippy>
+    <br>
+    <br>
+    <br>
+    <contact-form></contact-form>
     `,
     directives: [
         CoursesComponent,
@@ -158,7 +163,8 @@ import { ZippyComponent } from "./zippy.component";
         VoteComponent,
         TwitListComponent,
         BootstrapPanelComponent,
-        ZippyComponent
+        ZippyComponent,
+        ContactFormComponent
     ],
     pipes: [
         SummaryPipe
