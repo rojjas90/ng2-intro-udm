@@ -16,6 +16,6 @@
                <div class="alert alert-danger" *ngIf="!comment.valid && comment.touched">Comment is required</div>
           </div>
 
-          <button class="btn btn-primary" type="submit">Submit</button>
+          <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Submit</button>
      </form>
 </div>
