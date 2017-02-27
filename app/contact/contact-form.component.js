@@ -29,6 +29,9 @@ System.register(["angular2/core"], function(exports_1, context_1) {
                     core_1.Component({
                         selector: "contact-form",
                         templateUrl: "./app/contact/contact-form.component.html",
+                        styleUrls: [
+                            "./app/contact/contact-form.component.css"
+                        ]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], ContactFormComponent);
