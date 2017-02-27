@@ -1,5 +1,5 @@
 <div class="container">
-     <form action="">
+     <form #f="ngForm" (ngSubmit)="onSubmit(f.form)">
           <div class="form-group">
                <label for="firstName">First name</label>
                <input ngControl="firstName" #firstName="ngForm" (change)="log(firstName)" id="firstName" type="text" class="form-control"

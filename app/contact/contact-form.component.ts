@@ -4,7 +4,7 @@ import { Component, OnInit } from "angular2/core";
     selector: "contact-form",
     templateUrl: "./app/contact/contact-form.component.html",
     styleUrls: [
-      "./app/contact/contact-form.component.css"
+        "./app/contact/contact-form.component.css"
     ]
 })
 export class ContactFormComponent implements OnInit {
@@ -14,5 +14,9 @@ export class ContactFormComponent implements OnInit {
 
     log(param) {
         console.log(param);
+    }
+
+    onSubmit(form) {
+        console.log(form);
     }
 }
