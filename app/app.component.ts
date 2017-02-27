@@ -7,9 +7,10 @@ import { Component } from "angular2/core";
 // import { TwitListComponent } from "./twit-list.component";
 // import { SummaryPipe } from "./summary.pipe";
 // import { BootstrapPanelComponent } from "./bootstrap.panel.component";
-import { ZippyComponent } from "./zippy.component";
-import { ContactFormComponent } from "./contact/contact-form.component";
-import { SubscriptionFormComponent } from "./subscription/subscription-form.component";
+// import { ZippyComponent } from "./zippy.component";
+// import { ContactFormComponent } from "./contact/contact-form.component";
+// import { SubscriptionFormComponent } from "./subscription/subscription-form.component";
+import { SignUpFormComponent } from "./signup/signup-form.component";
 
 @Component({
     selector: "my-app",
@@ -152,6 +153,7 @@ import { SubscriptionFormComponent } from "./subscription/subscription-form.comp
       <br>
       -->
       <!-- Zippy exercise  -->
+      <!--
       <zippy *ngFor="#zippy of zippyData" [title]="zippy.title">
       {{zippy.content}}
       </zippy>
@@ -163,6 +165,10 @@ import { SubscriptionFormComponent } from "./subscription/subscription-form.comp
     <contact-form></contact-form>
     <br><hr><br>
     <subscription></subscription>
+    -->
+
+    <!-- modal driven -->
+    <signup-form></signup-form>
     `,
     directives: [
         // CoursesComponent,
@@ -172,9 +178,10 @@ import { SubscriptionFormComponent } from "./subscription/subscription-form.comp
         // VoteComponent,
         // TwitListComponent,
         // BootstrapPanelComponent,
-        ZippyComponent,
-        ContactFormComponent,
-        SubscriptionFormComponent
+        // ZippyComponent,
+        // ContactFormComponent,
+        // SubscriptionFormComponent
+        SignUpFormComponent
     ]
     // ,
     // pipes: [
