@@ -18,10 +18,14 @@ export class SignUpFormComponent {
 
     constructor(fb: FormBuilder) {
         this.form = fb.group({
-            username: ["", Validators.compose([
-                Validators.required,
-                UsernameValidators.cannotContainSpace
-            ])],
+            username: [
+                "", // 1st default value for the control
+                Validators.compose([
+                    Validators.required,
+                    UsernameValidators.cannotContainSpace
+                ]), // 2nd one or more custom validators
+                UsernameValidators.shouldBeUnique // 3rd one or more async custom validators
+            ],
             password: ["", Validators.required]
         });
     }

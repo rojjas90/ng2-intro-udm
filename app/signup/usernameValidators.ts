@@ -7,4 +7,18 @@ export class UsernameValidators {
 
         return null;
     }
+
+    // async validator
+    static shouldBeUnique(control: Control) {
+        return new Promise((resolve, reject) => {
+            setTimeout(function() {
+                if (control.value === "rojas")
+                    resolve({
+                        shouldBeUnique: true
+                    });
+                else
+                    resolve(null);
+            }, 1000);
+        });
+    }
 }
