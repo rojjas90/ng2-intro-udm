@@ -8,4 +8,8 @@ export class ContactFormComponent implements OnInit {
     constructor() { }
 
     ngOnInit() { }
+
+    log(param) {
+        console.log(param);
+    }
 }
