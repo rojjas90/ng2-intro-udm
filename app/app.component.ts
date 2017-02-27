@@ -9,6 +9,7 @@ import { Component } from "angular2/core";
 // import { BootstrapPanelComponent } from "./bootstrap.panel.component";
 import { ZippyComponent } from "./zippy.component";
 import { ContactFormComponent } from "./contact/contact-form.component";
+import { SubscriptionFormComponent } from "./subscription/subscription-form.component";
 
 @Component({
     selector: "my-app",
@@ -160,6 +161,8 @@ import { ContactFormComponent } from "./contact/contact-form.component";
 
 
     <contact-form></contact-form>
+    <br><hr><br>
+    <subscription></subscription>
     `,
     directives: [
         // CoursesComponent,
@@ -170,7 +173,8 @@ import { ContactFormComponent } from "./contact/contact-form.component";
         // TwitListComponent,
         // BootstrapPanelComponent,
         ZippyComponent,
-        ContactFormComponent
+        ContactFormComponent,
+        SubscriptionFormComponent
     ]
     // ,
     // pipes: [
