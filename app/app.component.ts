@@ -10,7 +10,8 @@ import { Component } from "angular2/core";
 // import { ZippyComponent } from "./zippy.component";
 // import { ContactFormComponent } from "./contact/contact-form.component";
 // import { SubscriptionFormComponent } from "./subscription/subscription-form.component";
-import { SignUpFormComponent } from "./signup/signup-form.component";
+// import { SignUpFormComponent } from "./signup/signup-form.component";
+import { ChangePasswordComponent } from "./change-password/change-password.component";
 
 @Component({
     selector: "my-app",
@@ -168,7 +169,8 @@ import { SignUpFormComponent } from "./signup/signup-form.component";
     -->
 
     <!-- modal driven -->
-    <signup-form></signup-form>
+    <!-- <signup-form></signup-form> -->
+    <change-password></change-password>
     `,
     directives: [
         // CoursesComponent,
@@ -181,7 +183,8 @@ import { SignUpFormComponent } from "./signup/signup-form.component";
         // ZippyComponent,
         // ContactFormComponent,
         // SubscriptionFormComponent
-        SignUpFormComponent
+        // SignUpFormComponent
+        ChangePasswordComponent
     ]
     // ,
     // pipes: [
@@ -248,17 +251,17 @@ export class AppComponent {
     //     // }
     // };
 
-    // Exercise
-    zippyData = [
-        {
-            title: "Section one",
-            content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
-        },
-        {
-            title: "Section two",
-            content: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-        }
-    ];
+    // // Exercise
+    // zippyData = [
+    //     {
+    //         title: "Section one",
+    //         content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+    //     },
+    //     {
+    //         title: "Section two",
+    //         content: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    //     }
+    // ];
 
     // onFavoriteChange($event) {
     //     console.log($event);
